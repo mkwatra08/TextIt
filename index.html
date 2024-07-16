@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+    *{
+        font-family: 'Poppins', Courier, monospace;
+        font-weight: bold;
+        font-size: 25px;
+    }
+    #name {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 20px;
+    }
+    .nav {
+           margin-left: 20px;
+           font-size: 18px;
+           color: black;
+           text-decoration: none;
+    }
+    .nav:hover {
+            transform: scale(1.1);
+        }
+    .nav-container {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        padding-right: 30px;
+    }
+    footer {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    
+    }
+    .fsize{
+        font-size: 15px;
+    }
+    footer a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+    }
+    .wrapper {
+        height: 100vh;
+        /*This part is important for centering*/
+        display: grid;
+        place-items: center;
+        }
+
+        .typing-demo {
+            width: 63ch;
+        animation: typing 5s steps(22) infinite, blink 0.5s step-end infinite alternate;
+        /* animation-delay: 3s; Delay before starting animation */
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 3px solid;
+        font-family: monospace;
+        font-size: 30px;
+        }
+
+        @keyframes typing {
+        from {
+            width: 0
+        }
+        }
+            
+        @keyframes blink {
+        50% {
+            border-color: transparent
+        }
+        }
+
+        .center-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        height: 100vh;
+        background-image: url('test.png');
+        background-size: contain;
+        background-position: center;
+        position: relative;
+    }
+    .container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); */
+}
+h1 {
+    color: #ecd608;
+    font-size: 40px;
+    /* margin-bottom: 20px; */
+}
+
+.sentence-builder {
+    margin-bottom: 20px;
+}
+#generateBtn{
+    background-color: #1b598b;
+}
+#generateBtn:hover{
+    background-color: #3285c7;
+    transform: scale(1.05);
+
+}
+#sentence {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: rgb(204, 77, 77);
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.option {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #000000;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.option:hover {
+    background-color: #34a853;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #000000;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #000000;
+}
+
+#result {
+    margin-top: 20px;
+    padding-left: 100px;
+}
+
+img {
+    /* max-width: 100%; */
+    width:400px;
+    height:350px;
+    border-radius: 5px;
+    border-color: #000000;
+}
+#have-fun{
+    /* font-family: Arial, sans-serif; */
+    background-color: #ffffff;
+    color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="heading">
+        <p id="name">
+            textIt
+            <span class="nav-container">
+                <a href="#text-to-image" class="nav">Text to Image</a>
+                <a href="#have-fun" class="nav">Have Fun</a>
+            </span>
+        </p>
+    </div>
+    <!-- <img src="test.png" class="bg-pic" alt="" style="width: 1584px; height: ;"> -->
+        <div class="center-container">
+            <div class="wrapper">
+                <div class="typing-demo">
+                    Create stunning visuals with our innovative image generation.
+                </div>
+            </div>
+
+    </div>
+    <br>
+    <br>
+<hr>
+    <section id="text-to-image">
+        
+    </section>
+
+    <section id="have-fun">
+        <div class="container">
+            <h1>Out of queries? .. Try me!</h1>
+            <div class="sentence-builder">
+                <p id="sentence">A photo of a</p>
+                <div class="options">
+                    <button class="option" data-word="fuzzy panda">Fuzzy panda</button>
+                    <button class="option" data-word="British Shorthair cat">British Shorthair cat</button>
+                    <button class="option" data-word="Persian cat">Persian cat</button>
+                    <button class="option" data-word="Shiba Inu dog">Shiba Inu dog</button>
+                    <button class="option" data-word="raccoon">raccoon</button>
+                    <button class="option" data-word="wearing a cowboy hat and">wearing a cowboy hat and</button>
+                    <button class="option" data-word="wearing sunglasses and">wearing sunglasses and</button>
+                    <button class="option" data-word="red shirt">red shirt</button>
+                    <button class="option" data-word="black leather jacket">black leather jacket</button>
+                    <button class="option" data-word="playing a guitar">playing a guitar</button>
+                    <button class="option" data-word="riding a bike">riding a bike</button>
+                    <button class="option" data-word="skateboarding">skateboarding</button>
+                    <button class="option" data-word="in a garden.">in a garden.</button>
+                    <button class="option" data-word="on a beach.">on a beach.</button>
+                    <button class="option" data-word="on top of a mountain.">on top of a mountain.</button>
+                </div>
+            </div>
+            <button id="generateBtn">Generate Image</button>
+            
+        </div>
+        <div id="result">
+            <img id="resultImage" src="" alt="Try Something Out!">
+        </div>
+    </section>
+
+
+    <footer>
+        <hr>
+        <p style="padding-top: 10px;" class="fsize">&copy; 2024 textIt. 
+            All rights reserved.</p>
+        <p class="fsize">Made by Error404</p>
+    </footer>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    <script src="/script.js"></script>
+</body>
+</html>
